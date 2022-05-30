@@ -6,6 +6,7 @@
   "author": "David Ziegler",
   "license": "MIT",
   "scripts": {
+    "build": "npx tsc",
     "start": "npx tsc && node dist/index.js"
   },
   "dependencies": {
