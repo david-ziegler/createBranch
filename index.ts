@@ -35,16 +35,13 @@ async function createBranch(name: string) {
   rl.close();
 }
 
-const spacesOrTabs = /\s+/g;
-const disallowedCharacters = /[:\(\)\.]/g;
+const disallowedCharacters = /[^a-zA-Z0-9]/g;
 const multipleHyphens = /--+/g;
 const hyphenAtBeginning = /^-/;
 const hyphenAtEnd = /-$/;
 
 const kebabCase = (input: string) =>
   input
-    .replace(/([a-z])([A-Z])/g, "$1-$2")
-    .replace(spacesOrTabs, "-")
     .replace(disallowedCharacters, "-")
     .replace(multipleHyphens, "-")
     .replace(hyphenAtBeginning, "")
